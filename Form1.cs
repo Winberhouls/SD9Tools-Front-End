@@ -24,13 +24,13 @@ namespace sd9tool_front_end
 
         }
 
-        
+
         public void button1_Click(object sender, EventArgs e)
         {
             var fileContent = string.Empty;
             var filePath = string.Empty;
             SD9File obj = new SD9File();
-            
+
 
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -58,7 +58,7 @@ namespace sd9tool_front_end
 
 
                     var variables = new Dictionary<string, string>();
-                    variables["script_path"] = @"I:\Media\Emulators\Bemani Tools\Git hub files\SD9Tool\[example\sd9tool.py";
+                    variables["script_path"] = @"path to the tools.py";
                     variables["filePath"] = openFileDialog.FileName;
 
                     var comando = CommandTemplates.CreateCommand(CommandKeys.ANALIZE, variables);
@@ -128,7 +128,7 @@ namespace sd9tool_front_end
                 }
             }
 
-   
+
 
         }
 
@@ -209,7 +209,7 @@ namespace sd9tool_front_end
     }
     public class SD9File
     {
-        static byte[] Header = new byte[] {0x53,0x44,0x39,0x00};
+        static byte[] Header = new byte[] { 0x53, 0x44, 0x39, 0x00 };
         byte[] SD9_HEADER = Header;
 
         // Define parameters
@@ -267,7 +267,7 @@ namespace sd9tool_front_end
                 using (FileStream sd9 = new FileStream(filename, FileMode.Open, FileAccess.Read))
                 {
                     // Read variables from the binary
-                 
+
                     this.header = new byte[4];
                     sd9.Read(this.header, 0, 4);
 
@@ -333,163 +333,6 @@ namespace sd9tool_front_end
             return true;
         }
 
-        public bool Sd9Save()
-        {
-            try
-            {
-                using (FileStream outfile = new FileStream(this.exportname, FileMode.Create, FileAccess.Write))
-                {
-                    // Write variables in file
-                    outfile.Write(this.header, 0, this.header.Length);
-                    outfile.Write(this.headerSize, 0, this.headerSize.Length);
-                    outfile.Write(this.audioSize, 0, this.audioSize.Length);
-                    outfile.Write(this.fluff1, 0, this.fluff1.Length);
-                    outfile.Write(this.fluff2, 0, this.fluff2.Length);
-                    outfile.WriteByte(this.volume);
-                    outfile.WriteByte(this.fluff3);
-                    outfile.Write(this.loopStart, 0, this.loopStart.Length);
-                    outfile.Write(this.loopEnd, 0, this.loopEnd.Length);
-                    outfile.WriteByte(this.loop);
-                    outfile.WriteByte(this.fluff4);
-                    outfile.Write(this.index, 0, this.index.Length);
-                    outfile.Write(this.audio, 0, this.audio.Length);
-                }
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"ERROR: Could not save SD9 file: {ex.Message}");
-                return false;
-            }
-        }
-        // Función para importar datos de audio y parámetros SD9 desde un objeto SD9 suministrado
-        public bool Sd9Import(SD9File sd9)
-        {
-            this.audioSize = sd9.audioSize;
-            this.volume = sd9.volume;
-            this.loopStart = sd9.loopStart;
-            this.loopEnd = sd9.loopEnd;
-            this.loop = sd9.loop;
-            this.audio = sd9.audio;
-
-            bool saved = this.Sd9Save();
-            if (saved)
-            {
-                Console.WriteLine($"SUCCESS: SD9 data imported: {sd9.filename} => {this.exportname}");
-            }
-
-            return saved;
-        }
-
-        // Función para establecer parámetros de volumen y bucle de la sección de audio en un archivo SD9
-        public void Sd9SetParam(byte? volume = null, byte? loop = null, int? loopStart = null, int? loopEnd = null)
-        {
-            if (volume.HasValue)
-            {
-                if (volume > 125)
-                {
-                    Console.WriteLine("WARNING: Ignoring volume above 125");
-                }
-                else
-                {
-                    byte newVolume = (byte)(125 - volume);
-
-                    this.volume = newVolume;
-                }
-            }
-            if (loop.HasValue)
-            {
-                this.loop = BitConverter.GetBytes(loop.Value)[0];
-            }
-            if (loopStart.HasValue)
-            {
-                loopStart *= 4;
-                this.loopStart = BitConverter.GetBytes(loopStart.Value);
-            }
-            if (loopEnd.HasValue)
-            {
-                loopEnd *= 4;
-                this.loopEnd = BitConverter.GetBytes(loopEnd.Value);
-            }
-        }
-        // Función para importar un archivo de audio (en formato Microsoft ADPCM) a la sección de audio SD9
-        public bool AudioImport(string filename)
-        {
-            try
-            {
-                using (FileStream infile = new FileStream(filename, FileMode.Open, FileAccess.Read))
-                {
-                    // Leer el archivo de audio en un arreglo de bytes
-                    int audioSize = (int)infile.Length;
-                    this.audio = new byte[audioSize];
-                    infile.Read(this.audio, 0, audioSize);
-
-                    // Establecer el tamaño del audio en el formato adecuado
-                    this.audioSize = BitConverter.GetBytes(audioSize);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"ERROR: Could not import audio track: {ex.Message}");
-                return false;
-            }
-
-            bool saved = this.Sd9Save();
-            if (saved)
-            {
-                Console.WriteLine($"SUCCESS: Audio imported into SD9: {this.exportname}");
-            }
-            return saved;
-        }
-
-        // Función para exportar la porción de datos de audio de un archivo SD9 a un archivo externo
-        public bool AudioExport(string exportName)
-        {
-            if (File.Exists(exportName) && !this.clobber)
-            {
-                Console.WriteLine("ERROR: Output audio exists: " + exportName);
-                return false;
-            }
-
-            try
-            {
-                using (FileStream outfile = new FileStream(exportName, FileMode.Create, FileAccess.Write))
-                {
-                    // Escribir los datos de audio en el archivo de salida
-                    outfile.Write(this.audio, 0, this.audio.Length);
-                }
-
-                Console.WriteLine($"SUCCESS: Audio exported from SD9: {exportName}");
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"ERROR: Could not export audio track: {ex.Message}");
-                return false;
-            }
-        }
-
-        // Override del método ToString para representar la cabecera SD9 como una cadena
-        public override string ToString()
-        {
-            int index = BitConverter.ToUInt16(this.index, 0);
-            int audioSize = BitConverter.ToInt32(this.audioSize, 0);
-            int audioVolume = 125 - this.volume; // No necesita indexarse
-            bool audioLoop = this.loop != 0; // No necesita indexarse
-            int audioLoopStart = BitConverter.ToInt32(this.loopStart, 0) / 4;
-            int audioLoopEnd = BitConverter.ToInt32(this.loopEnd, 0) / 4;
-
-            string s = $"[{this.filename}]\n";
-            s += $"Index                 : [{string.Join(" ", this.index.Select(x => x.ToString("X2")))}] ({index})\n";
-            s += $"Audio Size            : [{string.Join(" ", this.audioSize.Select(x => x.ToString("X2")))}] ({audioSize} B) or ({audioSize / 1024} KB)\n";
-            s += $"Audio Volume          : [{this.volume:X2}] ({audioVolume}%)\n";
-            s += $"Section Loop Enabled  : [{this.loop:X2}] ({audioLoop})\n";
-            s += $"Section Loop Start    : [{string.Join(" ", this.loopStart.Select(x => x.ToString("X2")))}] ({audioLoopStart})\n";
-            s += $"Section Loop End      : [{string.Join(" ", this.loopEnd.Select(x => x.ToString("X2")))}] ({audioLoopEnd})";
-
-            return s;
-        }
 
     }
 }

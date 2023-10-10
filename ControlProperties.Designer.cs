@@ -1,6 +1,6 @@
 ﻿namespace sd9tool_front_end
 {
-    partial class PropiedadesControl
+    partial class PropertiesControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -9,7 +9,7 @@
 
         /// <summary> 
         /// Clean up any resources being used.
-        /// </summary>
+        /// </summaryProperties
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {

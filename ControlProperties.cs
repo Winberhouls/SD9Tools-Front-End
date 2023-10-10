@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace sd9tool_front_end
 {
-    public partial class PropiedadesControl : UserControl
+    public partial class PropertiesControl : UserControl
     {
-        public PropiedadesControl()
+        public PropertiesControl()
         {
             InitializeComponent();
         }

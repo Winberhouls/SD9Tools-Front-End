@@ -54,11 +54,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PropiedadesControl.cs">
+    <Compile Include="ControlProperties.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PropiedadesControl.Designer.cs">
-      <DependentUpon>PropiedadesControl.cs</DependentUpon>
+    <Compile Include="ControlProperties.Designer.cs">
+      <DependentUpon>ControlProperties.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\CommandKeys.cs" />
     <Compile Include="Utilities\CommandTemplates.cs" />
@@ -75,8 +75,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="PropiedadesControl.resx">
-      <DependentUpon>PropiedadesControl.cs</DependentUpon>
+    <EmbeddedResource Include="ControlProperties.resx">
+      <DependentUpon>ControlProperties.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
