@@ -61,4 +61,4 @@ We welcome contributions to SD9Tools Frontend. To contribute, follow these steps
 
 ## License
 
-SD9Tools Frontend is licensed under the MIT License. You can find the full text of the license in the [LICENSE](LICENSE) file.
+SD9Tools Frontend is licensed under the Apache License 2.0. You can find the full text of the license in the [LICENSE](github.com/Winberhouls/SD9Tools-Front-End/blob/main/LICENSE.md) file.
