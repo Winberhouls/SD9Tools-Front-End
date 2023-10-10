@@ -41,12 +41,6 @@ To build SD9Tools Frontend, follow these steps:
 
 3. Build the project using the provided build options in Visual Studio.
 
-## To Do list
-
-- Add proper code for each elements of the GUI
-- Add the code to be able to extract and repack .sd9 files
-- Add the code to be able to transfer properties from one SD9 to another.
-- Add the code to be able to modify existing SD9s.
 ## Contributing
 
 We welcome contributions to SD9Tools Frontend. To contribute, follow these steps:
