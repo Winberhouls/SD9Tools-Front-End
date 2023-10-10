@@ -2,7 +2,7 @@
 
 ## Overview
 
-SD9Tools Frontend is a graphical user interface (GUI) made in C# for the [SD9Tools](https://github.com/TheFooestBar/SD9Tool) script. SD9Tools is designed for working with .sd9 files, which are proprietary file formats containing audio data in the Microsoft ADPCM format. Using [ffmpeg](https://ffmpeg.org/), you can easily convert your audio files into the required format.
+SD9Tools Frontend is a graphical user interface (GUI) made in C# for the [SD9Tools](https://github.com/TheFooestBar/SD9Tool) script made by **TheFooestBar**. SD9Tools is designed for working with .sd9 files, which are proprietary file formats containing audio data in the Microsoft ADPCM format. Using [ffmpeg](https://ffmpeg.org/), you can easily convert your audio files into the required format.
 
 Right now the GUI can hardly be used and what is in the GUI are only visual elements that do not work much, at this moment this interface cannot operate with SD9 files, only reading properties of them.
 
