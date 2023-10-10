@@ -20,6 +20,7 @@ To use SD9Tools Frontend, ensure you have the following prerequisites installed:
 
 - SD9Tool (i mean obviously)
 - Python 3.6 or higher
+- ffmpeg
 - Visual Studio 2022
 
 ## Dependencies
