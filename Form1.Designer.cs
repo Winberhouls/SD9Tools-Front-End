@@ -71,20 +71,20 @@
             this.button10 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button8 = new System.Windows.Forms.Button();
+            this.sd9newfilebox = new System.Windows.Forms.TextBox();
+            this.sd9origfilebox = new System.Windows.Forms.TextBox();
+            this.sd9NewBox = new System.Windows.Forms.TextBox();
+            this.s9newbuttonbrowse = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.sd9OriginBox = new System.Windows.Forms.TextBox();
+            this.sd9newbuttonbrowse = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.Settings = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.button12 = new System.Windows.Forms.Button();
+            this.ffmpegpathbox = new System.Windows.Forms.TextBox();
+            this.ffmpegbrowse = new System.Windows.Forms.Button();
             this.s9toolpathtext = new System.Windows.Forms.Label();
             this.s9toolpath = new System.Windows.Forms.TextBox();
             this.s9toolpathBrowse = new System.Windows.Forms.Button();
@@ -465,9 +465,9 @@
             // importwavfield
             // 
             this.importwavfield.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.importwavfield.Location = new System.Drawing.Point(283, 100);
+            this.importwavfield.Location = new System.Drawing.Point(276, 100);
             this.importwavfield.Name = "importwavfield";
-            this.importwavfield.Size = new System.Drawing.Size(203, 20);
+            this.importwavfield.Size = new System.Drawing.Size(210, 20);
             this.importwavfield.TabIndex = 26;
             // 
             // transfer
@@ -476,14 +476,14 @@
             this.transfer.Controls.Add(this.button10);
             this.transfer.Controls.Add(this.label5);
             this.transfer.Controls.Add(this.label4);
-            this.transfer.Controls.Add(this.textBox8);
-            this.transfer.Controls.Add(this.textBox7);
-            this.transfer.Controls.Add(this.textBox6);
-            this.transfer.Controls.Add(this.button8);
+            this.transfer.Controls.Add(this.sd9newfilebox);
+            this.transfer.Controls.Add(this.sd9origfilebox);
+            this.transfer.Controls.Add(this.sd9NewBox);
+            this.transfer.Controls.Add(this.s9newbuttonbrowse);
             this.transfer.Controls.Add(this.label3);
             this.transfer.Controls.Add(this.button9);
-            this.transfer.Controls.Add(this.textBox5);
-            this.transfer.Controls.Add(this.button5);
+            this.transfer.Controls.Add(this.sd9OriginBox);
+            this.transfer.Controls.Add(this.sd9newbuttonbrowse);
             this.transfer.Controls.Add(this.label2);
             this.transfer.Controls.Add(this.button7);
             this.transfer.Location = new System.Drawing.Point(4, 22);
@@ -531,48 +531,49 @@
             this.label4.TabIndex = 34;
             this.label4.Text = "SD9 Origin File Settings";
             // 
-            // textBox8
+            // sd9newfilebox
             // 
-            this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.sd9newfilebox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox8.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(422, 130);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(288, 218);
-            this.textBox8.TabIndex = 33;
+            this.sd9newfilebox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sd9newfilebox.Location = new System.Drawing.Point(422, 130);
+            this.sd9newfilebox.Multiline = true;
+            this.sd9newfilebox.Name = "sd9newfilebox";
+            this.sd9newfilebox.ReadOnly = true;
+            this.sd9newfilebox.Size = new System.Drawing.Size(288, 218);
+            this.sd9newfilebox.TabIndex = 33;
             // 
-            // textBox7
+            // sd9origfilebox
             // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.sd9origfilebox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox7.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(29, 130);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(288, 218);
-            this.textBox7.TabIndex = 32;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.sd9origfilebox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sd9origfilebox.Location = new System.Drawing.Point(29, 130);
+            this.sd9origfilebox.Multiline = true;
+            this.sd9origfilebox.Name = "sd9origfilebox";
+            this.sd9origfilebox.ReadOnly = true;
+            this.sd9origfilebox.Size = new System.Drawing.Size(288, 218);
+            this.sd9origfilebox.TabIndex = 32;
+            this.sd9origfilebox.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
-            // textBox6
+            // sd9NewBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(122, 63);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(254, 20);
-            this.textBox6.TabIndex = 30;
+            this.sd9NewBox.Location = new System.Drawing.Point(122, 63);
+            this.sd9NewBox.Name = "sd9NewBox";
+            this.sd9NewBox.Size = new System.Drawing.Size(254, 20);
+            this.sd9NewBox.TabIndex = 30;
             // 
-            // button8
+            // s9newbuttonbrowse
             // 
-            this.button8.Location = new System.Drawing.Point(382, 62);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 28;
-            this.button8.Text = "Browse";
-            this.button8.UseVisualStyleBackColor = true;
+            this.s9newbuttonbrowse.Location = new System.Drawing.Point(382, 62);
+            this.s9newbuttonbrowse.Name = "s9newbuttonbrowse";
+            this.s9newbuttonbrowse.Size = new System.Drawing.Size(75, 23);
+            this.s9newbuttonbrowse.TabIndex = 28;
+            this.s9newbuttonbrowse.Text = "Browse";
+            this.s9newbuttonbrowse.UseVisualStyleBackColor = true;
+            this.s9newbuttonbrowse.Click += new System.EventHandler(this.s9newbuttonbrowse_Click);
             // 
             // label3
             // 
@@ -592,21 +593,22 @@
             this.button9.Text = "Preview";
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // sd9OriginBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(122, 24);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(254, 20);
-            this.textBox5.TabIndex = 26;
+            this.sd9OriginBox.Location = new System.Drawing.Point(122, 24);
+            this.sd9OriginBox.Name = "sd9OriginBox";
+            this.sd9OriginBox.Size = new System.Drawing.Size(254, 20);
+            this.sd9OriginBox.TabIndex = 26;
             // 
-            // button5
+            // sd9newbuttonbrowse
             // 
-            this.button5.Location = new System.Drawing.Point(382, 22);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 24;
-            this.button5.Text = "Browse";
-            this.button5.UseVisualStyleBackColor = true;
+            this.sd9newbuttonbrowse.Location = new System.Drawing.Point(382, 22);
+            this.sd9newbuttonbrowse.Name = "sd9newbuttonbrowse";
+            this.sd9newbuttonbrowse.Size = new System.Drawing.Size(75, 23);
+            this.sd9newbuttonbrowse.TabIndex = 24;
+            this.sd9newbuttonbrowse.Text = "Browse";
+            this.sd9newbuttonbrowse.UseVisualStyleBackColor = true;
+            this.sd9newbuttonbrowse.Click += new System.EventHandler(this.sd9newbuttonbrowse_Click);
             // 
             // label2
             // 
@@ -629,8 +631,8 @@
             // Settings
             // 
             this.Settings.Controls.Add(this.label6);
-            this.Settings.Controls.Add(this.textBox9);
-            this.Settings.Controls.Add(this.button12);
+            this.Settings.Controls.Add(this.ffmpegpathbox);
+            this.Settings.Controls.Add(this.ffmpegbrowse);
             this.Settings.Controls.Add(this.s9toolpathtext);
             this.Settings.Controls.Add(this.s9toolpath);
             this.Settings.Controls.Add(this.s9toolpathBrowse);
@@ -655,26 +657,26 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "ffmpeg path";
             // 
-            // textBox9
+            // ffmpegpathbox
             // 
-            this.textBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ffmpegpathbox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox9.Location = new System.Drawing.Point(125, 98);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(499, 20);
-            this.textBox9.TabIndex = 7;
+            this.ffmpegpathbox.Location = new System.Drawing.Point(125, 98);
+            this.ffmpegpathbox.Name = "ffmpegpathbox";
+            this.ffmpegpathbox.Size = new System.Drawing.Size(499, 20);
+            this.ffmpegpathbox.TabIndex = 7;
             // 
-            // button12
+            // ffmpegbrowse
             // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button12.Location = new System.Drawing.Point(630, 98);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 6;
-            this.button12.Text = "Browse";
-            this.button12.UseVisualStyleBackColor = true;
+            this.ffmpegbrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ffmpegbrowse.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ffmpegbrowse.Location = new System.Drawing.Point(630, 98);
+            this.ffmpegbrowse.Name = "ffmpegbrowse";
+            this.ffmpegbrowse.Size = new System.Drawing.Size(75, 23);
+            this.ffmpegbrowse.TabIndex = 6;
+            this.ffmpegbrowse.Text = "Browse";
+            this.ffmpegbrowse.UseVisualStyleBackColor = true;
             // 
             // s9toolpathtext
             // 
@@ -706,6 +708,7 @@
             this.s9toolpathBrowse.TabIndex = 3;
             this.s9toolpathBrowse.Text = "Browse";
             this.s9toolpathBrowse.UseVisualStyleBackColor = true;
+            this.s9toolpathBrowse.Click += new System.EventHandler(this.s9toolpathBrowse_Click);
             // 
             // PythonTextPath
             // 
@@ -737,6 +740,7 @@
             this.BrowsePython.TabIndex = 0;
             this.BrowsePython.Text = "Browse";
             this.BrowsePython.UseVisualStyleBackColor = true;
+            this.BrowsePython.Click += new System.EventHandler(this.BrowsePython_Click_1);
             // 
             // Form1
             // 
@@ -807,19 +811,19 @@
         private System.Windows.Forms.TextBox PythonPath;
         private System.Windows.Forms.Button BrowsePython;
         private System.Windows.Forms.TabPage transfer;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TextBox sd9origfilebox;
+        private System.Windows.Forms.TextBox sd9NewBox;
+        private System.Windows.Forms.Button s9newbuttonbrowse;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox sd9OriginBox;
+        private System.Windows.Forms.Button sd9newbuttonbrowse;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox sd9newfilebox;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox10;
@@ -827,8 +831,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox overwriteask;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.TextBox ffmpegpathbox;
+        private System.Windows.Forms.Button ffmpegbrowse;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Label ConsoleOutput;
     }
