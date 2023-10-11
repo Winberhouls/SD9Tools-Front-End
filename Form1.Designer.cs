@@ -71,10 +71,10 @@
             this.button10 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.sd9newfilebox = new System.Windows.Forms.TextBox();
+            this.sd9Destinyfilebox = new System.Windows.Forms.TextBox();
             this.sd9origfilebox = new System.Windows.Forms.TextBox();
-            this.sd9NewBox = new System.Windows.Forms.TextBox();
-            this.s9newbuttonbrowse = new System.Windows.Forms.Button();
+            this.sd9DestinyBox = new System.Windows.Forms.TextBox();
+            this.s9Destinybuttonbrowse = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.sd9OriginBox = new System.Windows.Forms.TextBox();
@@ -476,10 +476,10 @@
             this.transfer.Controls.Add(this.button10);
             this.transfer.Controls.Add(this.label5);
             this.transfer.Controls.Add(this.label4);
-            this.transfer.Controls.Add(this.sd9newfilebox);
+            this.transfer.Controls.Add(this.sd9Destinyfilebox);
             this.transfer.Controls.Add(this.sd9origfilebox);
-            this.transfer.Controls.Add(this.sd9NewBox);
-            this.transfer.Controls.Add(this.s9newbuttonbrowse);
+            this.transfer.Controls.Add(this.sd9DestinyBox);
+            this.transfer.Controls.Add(this.s9Destinybuttonbrowse);
             this.transfer.Controls.Add(this.label3);
             this.transfer.Controls.Add(this.button9);
             this.transfer.Controls.Add(this.sd9OriginBox);
@@ -518,9 +518,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(419, 114);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(113, 13);
+            this.label5.Size = new System.Drawing.Size(126, 13);
             this.label5.TabIndex = 35;
-            this.label5.Text = "SD9 New File Settings";
+            this.label5.Text = "SD9 Destiny File Settings";
             // 
             // label4
             // 
@@ -531,18 +531,18 @@
             this.label4.TabIndex = 34;
             this.label4.Text = "SD9 Origin File Settings";
             // 
-            // sd9newfilebox
+            // sd9Destinyfilebox
             // 
-            this.sd9newfilebox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.sd9Destinyfilebox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.sd9newfilebox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sd9newfilebox.Location = new System.Drawing.Point(422, 130);
-            this.sd9newfilebox.Multiline = true;
-            this.sd9newfilebox.Name = "sd9newfilebox";
-            this.sd9newfilebox.ReadOnly = true;
-            this.sd9newfilebox.Size = new System.Drawing.Size(288, 218);
-            this.sd9newfilebox.TabIndex = 33;
+            this.sd9Destinyfilebox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sd9Destinyfilebox.Location = new System.Drawing.Point(422, 130);
+            this.sd9Destinyfilebox.Multiline = true;
+            this.sd9Destinyfilebox.Name = "sd9Destinyfilebox";
+            this.sd9Destinyfilebox.ReadOnly = true;
+            this.sd9Destinyfilebox.Size = new System.Drawing.Size(288, 218);
+            this.sd9Destinyfilebox.TabIndex = 33;
             // 
             // sd9origfilebox
             // 
@@ -558,31 +558,31 @@
             this.sd9origfilebox.TabIndex = 32;
             this.sd9origfilebox.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
-            // sd9NewBox
+            // sd9DestinyBox
             // 
-            this.sd9NewBox.Location = new System.Drawing.Point(122, 63);
-            this.sd9NewBox.Name = "sd9NewBox";
-            this.sd9NewBox.Size = new System.Drawing.Size(254, 20);
-            this.sd9NewBox.TabIndex = 30;
+            this.sd9DestinyBox.Location = new System.Drawing.Point(122, 63);
+            this.sd9DestinyBox.Name = "sd9DestinyBox";
+            this.sd9DestinyBox.Size = new System.Drawing.Size(254, 20);
+            this.sd9DestinyBox.TabIndex = 30;
             // 
-            // s9newbuttonbrowse
+            // s9Destinybuttonbrowse
             // 
-            this.s9newbuttonbrowse.Location = new System.Drawing.Point(382, 62);
-            this.s9newbuttonbrowse.Name = "s9newbuttonbrowse";
-            this.s9newbuttonbrowse.Size = new System.Drawing.Size(75, 23);
-            this.s9newbuttonbrowse.TabIndex = 28;
-            this.s9newbuttonbrowse.Text = "Browse";
-            this.s9newbuttonbrowse.UseVisualStyleBackColor = true;
-            this.s9newbuttonbrowse.Click += new System.EventHandler(this.s9newbuttonbrowse_Click);
+            this.s9Destinybuttonbrowse.Location = new System.Drawing.Point(382, 62);
+            this.s9Destinybuttonbrowse.Name = "s9Destinybuttonbrowse";
+            this.s9Destinybuttonbrowse.Size = new System.Drawing.Size(75, 23);
+            this.s9Destinybuttonbrowse.TabIndex = 28;
+            this.s9Destinybuttonbrowse.Text = "Browse";
+            this.s9Destinybuttonbrowse.UseVisualStyleBackColor = true;
+            this.s9Destinybuttonbrowse.Click += new System.EventHandler(this.s9newbuttonbrowse_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(26, 70);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.Size = new System.Drawing.Size(85, 13);
             this.label3.TabIndex = 29;
-            this.label3.Text = "SD9 New File";
+            this.label3.Text = "SD9 Destiny File";
             // 
             // button9
             // 
@@ -812,8 +812,8 @@
         private System.Windows.Forms.Button BrowsePython;
         private System.Windows.Forms.TabPage transfer;
         private System.Windows.Forms.TextBox sd9origfilebox;
-        private System.Windows.Forms.TextBox sd9NewBox;
-        private System.Windows.Forms.Button s9newbuttonbrowse;
+        private System.Windows.Forms.TextBox sd9DestinyBox;
+        private System.Windows.Forms.Button s9Destinybuttonbrowse;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TextBox sd9OriginBox;
@@ -823,7 +823,7 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox sd9newfilebox;
+        private System.Windows.Forms.TextBox sd9Destinyfilebox;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox10;

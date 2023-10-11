@@ -305,7 +305,7 @@ namespace sd9tool_front_end
                     var fileStream = openFileDialog.OpenFile();
 
                     //Addg text string to near texbox
-                    sd9NewBox.Text = filePath;
+                    sd9DestinyBox.Text = filePath;
 
                     using (StreamReader reader = new StreamReader(fileStream))
                     {
@@ -317,7 +317,7 @@ namespace sd9tool_front_end
 
                     var commands = CommandTemplates.CreateCommand(CommandKeys.ANALIZE, theVars);
 
-                    sd9newfilebox.Text = ToolCommands.StartCommand("python", commands);
+                    sd9Destinyfilebox.Text = ToolCommands.StartCommand("python", commands);
                 }
             }
         }
