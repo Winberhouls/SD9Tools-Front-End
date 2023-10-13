@@ -52,7 +52,7 @@ We welcome contributions to SD9Tools Frontend. To contribute, follow these steps
 3. Create a new branch for your contribution:
 
    ```bash
-   git checkout -b feature/your-feature-name
+   git checkout -b feature/your-user-name
    ```
 
 4. Make your changes and commit them with clear and concise messages.

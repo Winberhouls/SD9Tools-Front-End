@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,8 @@ namespace sd9tool_front_end
 {
     public partial class Form1 : Form
     {
+        // Path for the tools location
+        private string toolssd9path;
         public Form1()
         {
             InitializeComponent();
@@ -24,13 +27,17 @@ namespace sd9tool_front_end
 
         }
 
-
+        private string toolpath = string.Empty;
         public void button1_Click(object sender, EventArgs e)
         {
             var fileContent = string.Empty;
             var filePath = string.Empty;
             SD9File obj = new SD9File();
+            string globaltoolspath = toolssd9path;
 
+
+
+            Form1 frm = new Form1();
 
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -55,15 +62,15 @@ namespace sd9tool_front_end
                         fileContent = reader.ReadToEnd();
                     }
                     bool fileLoad = obj.SD9Load(filePath);
+                    
 
+                    var theVars = new Dictionary<string, string>();
+                    theVars["script_path"] = globaltoolspath;
+                    theVars["filePath"] = openFileDialog.FileName;
 
-                    var variables = new Dictionary<string, string>();
-                    variables["script_path"] = @"path to the tools.py";
-                    variables["filePath"] = openFileDialog.FileName;
+                    var commands = CommandTemplates.CreateCommand(CommandKeys.ANALIZE, theVars);
 
-                    var comando = CommandTemplates.CreateCommand(CommandKeys.ANALIZE, variables);
-
-                    txtOutput.Text = ToolCommands.EjecutarComando("python", comando);
+                    txtOutput.Text = ToolCommands.StartCommand("python", commands);
                 }
             }
         }
@@ -204,7 +211,152 @@ namespace sd9tool_front_end
 
         private void button13_Click(object sender, EventArgs e)
         {
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
 
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "%UserProfile%\\";
+                openFileDialog.Filter = "SD9 files (*.sd9)|*.sd9*";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = openFileDialog.FileName;
+
+                    //Read the contents of the file into a stream
+                    var fileStream = openFileDialog.OpenFile();
+
+                    //Addg text string to near texbox
+                    textBox10.Text = filePath;
+
+                    using (StreamReader reader = new StreamReader(fileStream))
+                    {
+                        fileContent = reader.ReadToEnd();
+                    }
+                }
+            }
+        }
+
+        private void sd9newbuttonbrowse_Click(object sender, EventArgs e)
+        {
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+            string globaltoolspath = toolssd9path;
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "%UserProfile%\\";
+                openFileDialog.Filter = "SD9 files (*.sd9)|*.sd9*";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = openFileDialog.FileName;
+
+                    //Read the contents of the file into a stream
+                    var fileStream = openFileDialog.OpenFile();
+
+                    //Addg text string to near texbox
+                    sd9OriginBox.Text = filePath;
+
+                    using (StreamReader reader = new StreamReader(fileStream))
+                    {
+                        fileContent = reader.ReadToEnd();
+                    }
+
+                    var theVars = new Dictionary<string, string>();
+                    theVars["script_path"] = globaltoolspath;
+                    theVars["filePath"] = openFileDialog.FileName;
+
+                    var commands = CommandTemplates.CreateCommand(CommandKeys.ANALIZE, theVars);
+
+                    sd9origfilebox.Text = ToolCommands.StartCommand("python", commands);
+
+                }
+            }
+            
+
+        }
+
+        private void s9newbuttonbrowse_Click(object sender, EventArgs e)
+        {
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+            string globaltoolspath = toolssd9path;
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "%UserProfile%\\";
+                openFileDialog.Filter = "SD9 files (*.sd9)|*.sd9*";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = openFileDialog.FileName;
+
+                    //Read the contents of the file into a stream
+                    var fileStream = openFileDialog.OpenFile();
+
+                    //Addg text string to near texbox
+                    sd9DestinyBox.Text = filePath;
+
+                    using (StreamReader reader = new StreamReader(fileStream))
+                    {
+                        fileContent = reader.ReadToEnd();
+                    }
+                    var theVars = new Dictionary<string, string>();
+                    theVars["script_path"] = globaltoolspath;
+                    theVars["filePath"] = openFileDialog.FileName;
+
+                    var commands = CommandTemplates.CreateCommand(CommandKeys.ANALIZE, theVars);
+
+                    sd9Destinyfilebox.Text = ToolCommands.StartCommand("python", commands);
+                }
+            }
+        }
+
+        private void BrowsePython_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        public void s9toolpathBrowse_Click(object sender, EventArgs e)
+        {
+            var fileContent = string.Empty;
+            
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "%UserProfile%\\";
+                openFileDialog.Filter = "python project (*.py)|*.py*";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    toolssd9path = openFileDialog.FileName;
+
+
+                    //Read the contents of the file into a stream
+                    var fileStream = openFileDialog.OpenFile();
+
+                    //Addg text string to near texbox
+                    s9toolpath.Text = toolssd9path;
+
+                    using (StreamReader reader = new StreamReader(fileStream))
+                    {
+                        fileContent = reader.ReadToEnd();
+                    }
+                }
+            }
         }
     }
     public class SD9File
@@ -266,7 +418,7 @@ namespace sd9tool_front_end
             {
                 using (FileStream sd9 = new FileStream(filename, FileMode.Open, FileAccess.Read))
                 {
-                    // Read variables from the binary
+                    // Read theVars from the binary
 
                     this.header = new byte[4];
                     sd9.Read(this.header, 0, 4);
