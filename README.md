@@ -8,11 +8,11 @@ Right now the GUI can hardly be used and what is in the GUI are only visual elem
 
 ## Features
 
-- Export audio from SD9 files.
-- Import audio into SD9 files.
-- Transfer audio and parameters from one SD9 file to another.
-- Adjust audio volume.
-- Set section loops within SD9 files.
+- ~~Export audio from SD9 files.~~
+- ~~Import audio into SD9 files.~~
+- ~~Transfer audio and parameters from one SD9 file to another.~~
+- ~~Adjust audio volume.~~
+- ~~Set section loops within SD9 files.~~
 
 ## Requirements
 
@@ -65,3 +65,4 @@ We welcome contributions to SD9Tools Frontend. To contribute, follow these steps
 ## License
 
 SD9Tools Frontend is licensed under the Apache License 2.0. You can find the full text of the license in the [LICENSE](github.com/Winberhouls/SD9Tools-Front-End/blob/main/LICENSE.md) file.
+
